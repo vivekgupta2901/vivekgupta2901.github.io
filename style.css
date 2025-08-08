@@ -17,7 +17,12 @@ body {
   color: #333;
   line-height: 1.6;
   transition: background 0.3s, color 0.3s;
-  padding-top: 170px; /* space for fixed hero + tabs */
+  padding-top: 170px; /* Reserve space for fixed header + nav */
+}
+
+/* Scroll padding for anchor navigation */
+html {
+  scroll-padding-top: 160px; /* Height of fixed header + nav */
 }
 
 /* Container for center & max width */
@@ -171,7 +176,6 @@ body.dark #hero-nav ul li a::after {
 /* ===== SECTIONS ===== */
 section {
   padding: 60px 1rem 40px 1rem;
-  scroll-margin-top: 160px; /* Updated to 160px */
 }
 section h2 {
   font-size: 2rem;
