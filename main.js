@@ -1,3 +1,31 @@
+// Smooth scrolling for nav links
+document.querySelectorAll('#navbar a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetID = this.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetID);
+    if(targetSection) {
+      window.scrollTo({
+        top: targetSection.offsetTop - 45, // adjust for navbar height
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// Highlight active navbar link on scroll
+window.addEventListener('scroll', () => {
+  const scrollPos = window.scrollY + 50; // offset for navbar
+  document.querySelectorAll('#navbar a').forEach(link => {
+    const section = document.querySelector(link.hash);
+    if(section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+});
+
 // Dark Mode Toggle
 const themeToggle = document.getElementById('theme-toggle');
 themeToggle.addEventListener('click', () => {
@@ -38,3 +66,4 @@ filterBtns.forEach(btn => {
     });
   });
 });
+
