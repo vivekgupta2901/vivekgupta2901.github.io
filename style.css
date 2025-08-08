@@ -171,7 +171,7 @@ body.dark #hero-nav ul li a::after {
 /* ===== SECTIONS ===== */
 section {
   padding: 60px 1rem 40px 1rem;
-  scroll-margin-top: 140px; /* Fix for fixed header overlapping sections */
+  scroll-margin-top: 160px; /* Updated to 160px */
 }
 section h2 {
   font-size: 2rem;
