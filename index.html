@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vivek Gupta | Senior Data Engineer</title>
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet" />
-  
+
   <!-- Font Awesome Icons -->
   <link
     rel="stylesheet"
@@ -15,19 +15,19 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-  
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- Dark Mode Toggle -->
-  <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+  <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode" type="button">
     <i class="fa fa-moon"></i>
   </button>
 
   <!-- ===== HERO SECTION ===== -->
-  <section id="hero" class="fade-in">
+  <section id="hero" class="fade-in" role="banner">
     <div class="container">
       <h1>Vivek Gupta</h1>
       <h2>Senior Data Engineer | Cloud | Big Data | Streaming | AI/ML</h2>
@@ -49,9 +49,9 @@
   </section>
 
   <!-- ===== ABOUT SECTION ===== -->
-  <section id="about" class="fade-in delay-1" tabindex="-1">
+  <section id="about" class="fade-in delay-1" tabindex="-1" role="region" aria-labelledby="about-heading">
     <div class="container">
-      <h2>About Me</h2>
+      <h2 id="about-heading">About Me</h2>
       <p>
         I am a Senior Data Engineer with 10+ years of experience designing and operationalizing cloud-native,
         scalable, and production-ready data solutions. My work spans big data platforms, workflow orchestration,
@@ -62,24 +62,24 @@
   </section>
 
   <!-- ===== SKILLS SECTION ===== -->
-  <section id="skills" class="fade-in delay-2" tabindex="-1">
+  <section id="skills" class="fade-in delay-2" tabindex="-1" role="region" aria-labelledby="skills-heading">
     <div class="container">
-      <h2>Core Competencies</h2>
+      <h2 id="skills-heading">Core Competencies</h2>
       <div class="grid">
-        <div class="skill"><i class="fa fa-code"></i> Python, Scala, SQL, Java (Basic)</div>
-        <div class="skill"><i class="fa fa-database"></i> Apache Spark, Kafka, Hadoop, Snowflake</div>
-        <div class="skill"><i class="fa fa-cloud"></i> Azure, AWS, GCP, Databricks</div>
-        <div class="skill"><i class="fa fa-cogs"></i> Airflow, Azure Data Factory, Terraform, Kubernetes</div>
-        <div class="skill"><i class="fa fa-server"></i> dbt, REST APIs, Event Streams, NoSQL</div>
-        <div class="skill"><i class="fa fa-chart-bar"></i> Power BI, Tableau, Looker</div>
+        <div class="skill"><i class="fa fa-code" aria-hidden="true"></i> Python, Scala, SQL, Java (Basic)</div>
+        <div class="skill"><i class="fa fa-database" aria-hidden="true"></i> Apache Spark, Kafka, Hadoop, Snowflake</div>
+        <div class="skill"><i class="fa fa-cloud" aria-hidden="true"></i> Azure, AWS, GCP, Databricks</div>
+        <div class="skill"><i class="fa fa-cogs" aria-hidden="true"></i> Airflow, Azure Data Factory, Terraform, Kubernetes</div>
+        <div class="skill"><i class="fa fa-server" aria-hidden="true"></i> dbt, REST APIs, Event Streams, NoSQL</div>
+        <div class="skill"><i class="fa fa-chart-bar" aria-hidden="true"></i> Power BI, Tableau, Looker</div>
       </div>
     </div>
   </section>
 
   <!-- ===== CAREER HIGHLIGHTS ===== -->
-  <section id="highlights" class="fade-in delay-3" tabindex="-1">
+  <section id="highlights" class="fade-in delay-3" tabindex="-1" role="region" aria-labelledby="highlights-heading">
     <div class="container">
-      <h2>Career Highlights</h2>
+      <h2 id="highlights-heading">Career Highlights</h2>
       <ul>
         <li>Built Spark-based ETL pipelines on Azure processing 5TB/day with high fault tolerance.</li>
         <li>Architected Kafka pipelines handling 1M+ events/min with &lt;1s latency.</li>
@@ -91,9 +91,9 @@
   </section>
 
   <!-- ===== PROJECTS (Interactive Filter) ===== -->
-  <section id="projects" class="fade-in delay-4" tabindex="-1">
+  <section id="projects" class="fade-in delay-4" tabindex="-1" role="region" aria-labelledby="projects-heading">
     <div class="container">
-      <h2>Selected Projects</h2>
+      <h2 id="projects-heading">Selected Projects</h2>
 
       <div class="filters" role="tablist" aria-label="Project filters">
         <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" tabindex="0">All</button>
@@ -103,29 +103,29 @@
       </div>
 
       <div class="projects-grid">
-        <div class="project-card real-time" tabindex="0">
+        <article class="project-card real-time" tabindex="0">
           <h3>Real-time Healthcare Data Pipeline</h3>
           <p>Kafka + Spark Streaming pipelines integrated with Neo4j for patient monitoring.</p>
           <small>Tech: Kafka, Spark, GCP, Terraform, Airflow</small>
-        </div>
-        <div class="project-card cloud" tabindex="0">
+        </article>
+        <article class="project-card cloud" tabindex="0">
           <h3>Cloud-Native Data Lake on GCP</h3>
           <p>Unified 20+ data sources for analytics using BigQuery, Dataflow.</p>
           <small>Tech: GCP, BigQuery, Dataflow, Python</small>
-        </div>
-        <div class="project-card etl" tabindex="0">
+        </article>
+        <article class="project-card etl" tabindex="0">
           <h3>ETL Migration to Databricks</h3>
           <p>Migrated Cosmos DB workloads with optimized Spark Scala transformations.</p>
           <small>Tech: Azure, Databricks, Scala, ADF, Terraform</small>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- ===== EXPERIENCE ===== -->
-  <section id="experience" class="fade-in delay-5" tabindex="-1">
+  <section id="experience" class="fade-in delay-5" tabindex="-1" role="region" aria-labelledby="experience-heading">
     <div class="container">
-      <h2>Professional Experience</h2>
+      <h2 id="experience-heading">Professional Experience</h2>
 
       <article class="job" tabindex="0" aria-label="Senior Data Engineer at Experis AT&T">
         <h3>Senior Data Engineer – Experis (AT&T)</h3>
@@ -156,14 +156,13 @@
         <time>Aug 2008 – Jul 2010</time>
         <p>SQL reporting, production support, backend optimization.</p>
       </article>
-
     </div>
   </section>
 
   <!-- ===== EDUCATION ===== -->
-  <section id="education" class="fade-in delay-6" tabindex="-1">
+  <section id="education" class="fade-in delay-6" tabindex="-1" role="region" aria-labelledby="education-heading">
     <div class="container">
-      <h2>Education</h2>
+      <h2 id="education-heading">Education</h2>
       <ul>
         <li tabindex="0">Rajasthan Technical University – M.Tech, Computer Engineering (2016–2018)</li>
         <li tabindex="0">University of Rajasthan – B.E., Computer Engineering (2004–2008)</li>
@@ -172,20 +171,19 @@
   </section>
 
   <!-- ===== CONTACT ===== -->
-  <section id="contact" class="fade-in delay-7" tabindex="-1">
+  <section id="contact" class="fade-in delay-7" tabindex="-1" role="region" aria-labelledby="contact-heading">
     <div class="container">
-      <h2>Contact</h2>
+      <h2 id="contact-heading">Contact</h2>
       <p>Email: <a href="mailto:vgupta0129@gmail.com">vgupta0129@gmail.com</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/">linkedin.com/in/</a></p>
       <p>GitHub: <a href="https://github.com/vivekgupta2901">github.com/vivekgupta2901</a></p>
     </div>
   </section>
 
-  <footer>
+  <footer role="contentinfo">
     <p>© 2025 Vivek Gupta | “Data is the new oil, but refinement is the key.”</p>
   </footer>
 
-  <!-- JavaScript -->
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>
