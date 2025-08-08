@@ -42,20 +42,19 @@ heroNavLinks.forEach(link => {
     const targetID = link.getAttribute('href').slice(1);
     const targetSection = document.getElementById(targetID);
     if (targetSection) {
-      window.scrollTo({
-        top: targetSection.offsetTop - 160, // offset equals fixed header + nav height
-        behavior: 'smooth'
-      });
+      // Use native scrollIntoView with smooth behavior and rely on scroll-padding-top CSS for offset
+      targetSection.scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Update active tab on click
+    // Update active tab on click immediately
     heroNavLinks.forEach(lnk => lnk.classList.remove('active'));
     link.classList.add('active');
   });
 });
 
+// Update active nav tab on scroll
 window.addEventListener('scroll', () => {
-  const scrollPos = window.scrollY + 170; // slightly larger than offset for buffer
+  const scrollPos = window.scrollY + 170; // buffer for fixed header height
   heroNavLinks.forEach(link => {
     const section = document.querySelector(link.hash);
     if (section) {
