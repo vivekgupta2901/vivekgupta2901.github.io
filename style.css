@@ -1,3 +1,55 @@
+/* Navigation Bar */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1a73e8;
+  padding: 10px 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+}
+#navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#navbar ul li {
+  margin: 0 15px;
+}
+#navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+#navbar ul li a:hover,
+#navbar ul li a.active {
+  color: #ff9800;
+  border-bottom: 2px solid #ff9800;
+  padding-bottom: 2px;
+}
+
+/* Add top padding to body so content isn't hidden behind navbar */
+body {
+  padding-top: 50px; /* adjust if navbar height changes */
+}
+
+/* Dark mode adjustments */
+body.dark #navbar {
+  background: #212c3b;
+}
+body.dark #navbar ul li a {
+  color: #e6e6e6;
+}
+body.dark #navbar ul li a:hover,
+body.dark #navbar ul li a.active {
+  color: #ffb74d;
+  border-color: #ffb74d;
+}
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -135,3 +187,4 @@ footer { background: #222; color: #aaa; text-align: center; padding: 15px;}
 body.dark footer { background: #181d24; color: #48a3ff;}
 /* Overlay for animation pop (optional) */
 #overlay { display: none; }
+
