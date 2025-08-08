@@ -20,7 +20,6 @@ const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
   setTheme(savedTheme);
 } else {
-  // Optional: Use system preference as default
   const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   setTheme(prefersDark ? 'dark' : 'light');
 }
@@ -34,9 +33,6 @@ themeToggle.addEventListener('click', () => {
   }
 });
 
-// ===== FADE IN ANIMATIONS ALREADY HANDLED VIA CSS =====
-// The CSS keyframe animations handle fade-in on page load.
-
 // ===== SMOOTH SCROLL & NAV LINK ACTIVE HIGHLIGHT =====
 
 const heroNavLinks = document.querySelectorAll('#hero-nav a');
@@ -48,7 +44,7 @@ heroNavLinks.forEach(link => {
     const targetSection = document.getElementById(targetID);
     if (targetSection) {
       window.scrollTo({
-        top: targetSection.offsetTop - 130, // Fix offset to hero nav height (fixed header)
+        top: targetSection.offsetTop - 130, // adjust offset for fixed hero + tabs height
         behavior: 'smooth'
       });
     }
@@ -61,7 +57,7 @@ heroNavLinks.forEach(link => {
 
 // Highlight active nav link based on scroll position
 window.addEventListener('scroll', () => {
-  const scrollPos = window.scrollY + 140; // Adjust for fixed header height
+  const scrollPos = window.scrollY + 140; // offset for fixed header
   heroNavLinks.forEach(link => {
     const section = document.querySelector(link.hash);
     if (section) {
@@ -74,7 +70,6 @@ window.addEventListener('scroll', () => {
     }
   });
 });
-
 
 // ===== INTERACTIVE PROJECT FILTERING =====
 const filterButtons = document.querySelectorAll('.filter-btn');
