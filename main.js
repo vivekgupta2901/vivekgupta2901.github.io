@@ -15,7 +15,7 @@ function setTheme(theme) {
   localStorage.setItem('theme', theme);
 }
 
-// Initialize theme on page load
+// Initialize theme from localStorage or system preference
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
   setTheme(savedTheme);
@@ -34,7 +34,6 @@ themeToggle.addEventListener('click', () => {
 });
 
 // ===== SMOOTH SCROLL & NAV LINK ACTIVE HIGHLIGHT =====
-
 const heroNavLinks = document.querySelectorAll('#hero-nav a');
 
 heroNavLinks.forEach(link => {
@@ -44,7 +43,7 @@ heroNavLinks.forEach(link => {
     const targetSection = document.getElementById(targetID);
     if (targetSection) {
       window.scrollTo({
-        top: targetSection.offsetTop - 160, // Updated offset to 160px (header height)
+        top: targetSection.offsetTop - 160, // offset equals fixed header + nav height
         behavior: 'smooth'
       });
     }
@@ -55,9 +54,8 @@ heroNavLinks.forEach(link => {
   });
 });
 
-// Highlight active nav link based on scroll position
 window.addEventListener('scroll', () => {
-  const scrollPos = window.scrollY + 170; // Slightly larger than offset to avoid flicker
+  const scrollPos = window.scrollY + 170; // slightly larger than offset for buffer
   heroNavLinks.forEach(link => {
     const section = document.querySelector(link.hash);
     if (section) {
