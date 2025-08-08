@@ -44,7 +44,7 @@ heroNavLinks.forEach(link => {
     const targetSection = document.getElementById(targetID);
     if (targetSection) {
       window.scrollTo({
-        top: targetSection.offsetTop - 130, // adjust offset for fixed hero + tabs height
+        top: targetSection.offsetTop - 160, // Updated offset to 160px (header height)
         behavior: 'smooth'
       });
     }
@@ -57,7 +57,7 @@ heroNavLinks.forEach(link => {
 
 // Highlight active nav link based on scroll position
 window.addEventListener('scroll', () => {
-  const scrollPos = window.scrollY + 140; // offset for fixed header
+  const scrollPos = window.scrollY + 170; // Slightly larger than offset to avoid flicker
   heroNavLinks.forEach(link => {
     const section = document.querySelector(link.hash);
     if (section) {
