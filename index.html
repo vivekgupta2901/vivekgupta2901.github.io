@@ -1,52 +1,69 @@
 <!DOCTYPE html>
-<nav id="navbar">
-  <ul>
-    <li><a href="#hero">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#highlights">Highlights</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vivek Gupta | Senior Data Engineer</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-xh6gcJ6b4zT2I+2qohksrK6Ogx5dqe4KtOqZ2ZTnubCz7z7Z1s/oyHliWYoZ3qKZL2KrG8rDRwBHypalWpzKdw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- ===== THEME TOGGLE ===== -->
-  <button id="theme-toggle" aria-label="Toggle dark mode">
+
+  <!-- Dark Mode Toggle -->
+  <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
     <i class="fa fa-moon"></i>
   </button>
-  <div id="overlay"></div>
 
-  <!-- ===== HERO ===== -->
+  <!-- ===== HERO SECTION ===== -->
   <section id="hero" class="fade-in">
     <div class="container">
       <h1>Vivek Gupta</h1>
       <h2>Senior Data Engineer | Cloud | Big Data | Streaming | AI/ML</h2>
       <p>Transforming data into intelligence with scalable, future-proof solutions.</p>
+
+      <!-- Tab-style Navigation (under hero text) -->
+      <nav id="hero-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#about" class="active">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#highlights">Highlights</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </section>
 
-  <!-- ===== ABOUT ===== -->
-  <section id="about" class="fade-in delay-1">
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="fade-in delay-1" tabindex="-1">
     <div class="container">
       <h2>About Me</h2>
-      <p>I am a Senior Data Engineer with 10+ years of experience designing and operationalizing cloud-native, scalable, and production-ready data solutions. My work spans big data platforms, workflow orchestration, distributed processing, and real-time analytics. I excel at solving performance, scalability, and integration challenges in complex environments.</p>
+      <p>
+        I am a Senior Data Engineer with 10+ years of experience designing and operationalizing cloud-native,
+        scalable, and production-ready data solutions. My work spans big data platforms, workflow orchestration,
+        distributed processing, and real-time analytics. I excel at solving performance, scalability, and integration
+        challenges in complex environments.
+      </p>
     </div>
   </section>
 
-  <!-- ===== SKILLS ===== -->
-  <section id="skills" class="fade-in delay-2">
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills" class="fade-in delay-2" tabindex="-1">
     <div class="container">
       <h2>Core Competencies</h2>
       <div class="grid">
@@ -61,43 +78,45 @@
   </section>
 
   <!-- ===== CAREER HIGHLIGHTS ===== -->
-  <section id="highlights" class="fade-in delay-3">
+  <section id="highlights" class="fade-in delay-3" tabindex="-1">
     <div class="container">
       <h2>Career Highlights</h2>
       <ul>
-        <li>Built Spark-based ETL pipelines on Azure, processing 5TB/day with high fault tolerance.</li>
-        <li>Architected Kafka pipelines handling 1M+ events/min with <1s latency.</li>
-        <li>Reduced Azure infra costs by 30% via optimised Terraform deployments.</li>
+        <li>Built Spark-based ETL pipelines on Azure processing 5TB/day with high fault tolerance.</li>
+        <li>Architected Kafka pipelines handling 1M+ events/min with &lt;1s latency.</li>
+        <li>Reduced Azure infra costs by 30% via optimized Terraform deployments.</li>
         <li>Migrated data warehouse workloads to Databricks, cutting query times by 40%.</li>
         <li>Deployed ML models into real-time systems, improving forecasting by 25%.</li>
       </ul>
     </div>
   </section>
 
-  <!-- ===== PROJECTS (INTERACTIVE) ===== -->
-  <section id="projects" class="fade-in delay-4">
+  <!-- ===== PROJECTS (Interactive Filter) ===== -->
+  <section id="projects" class="fade-in delay-4" tabindex="-1">
     <div class="container">
       <h2>Selected Projects</h2>
-      <div class="filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="real-time">Real-Time</button>
-        <button class="filter-btn" data-filter="cloud">Cloud</button>
-        <button class="filter-btn" data-filter="etl">ETL</button>
+
+      <div class="filters" role="tablist" aria-label="Project filters">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" tabindex="0">All</button>
+        <button class="filter-btn" data-filter="real-time" role="tab" aria-selected="false" tabindex="-1">Real-Time</button>
+        <button class="filter-btn" data-filter="cloud" role="tab" aria-selected="false" tabindex="-1">Cloud</button>
+        <button class="filter-btn" data-filter="etl" role="tab" aria-selected="false" tabindex="-1">ETL</button>
       </div>
+
       <div class="projects-grid">
-        <div class="project-card real-time">
+        <div class="project-card real-time" tabindex="0">
           <h3>Real-time Healthcare Data Pipeline</h3>
           <p>Kafka + Spark Streaming pipelines integrated with Neo4j for patient monitoring.</p>
           <small>Tech: Kafka, Spark, GCP, Terraform, Airflow</small>
         </div>
-        <div class="project-card cloud">
+        <div class="project-card cloud" tabindex="0">
           <h3>Cloud-Native Data Lake on GCP</h3>
           <p>Unified 20+ data sources for analytics using BigQuery, Dataflow.</p>
           <small>Tech: GCP, BigQuery, Dataflow, Python</small>
         </div>
-        <div class="project-card etl">
+        <div class="project-card etl" tabindex="0">
           <h3>ETL Migration to Databricks</h3>
-          <p>Migrated Cosmos DB workloads with optimised Spark Scala transformations.</p>
+          <p>Migrated Cosmos DB workloads with optimized Spark Scala transformations.</p>
           <small>Tech: Azure, Databricks, Scala, ADF, Terraform</small>
         </div>
       </div>
@@ -105,54 +124,61 @@
   </section>
 
   <!-- ===== EXPERIENCE ===== -->
-  <section id="experience" class="fade-in delay-5">
+  <section id="experience" class="fade-in delay-5" tabindex="-1">
     <div class="container">
       <h2>Professional Experience</h2>
-      <div class="job">
+
+      <article class="job" tabindex="0" aria-label="Senior Data Engineer at Experis AT&T">
         <h3>Senior Data Engineer – Experis (AT&T)</h3>
-        <span>Jun 2023 – Present</span>
-        <p>ETL pipelines, Airflow orchestration, API development, Terraform optimisation.</p>
-      </div>
-      <div class="job">
+        <time>Jun 2023 – Present</time>
+        <p>ETL pipelines, Airflow orchestration, API development, Terraform optimization.</p>
+      </article>
+
+      <article class="job" tabindex="0" aria-label="Associate Consultant at TCS">
         <h3>Associate Consultant – TCS</h3>
-        <span>Jun 2022 – Mar 2023</span>
+        <time>Jun 2022 – Mar 2023</time>
         <p>Data migration, governance, performance tuning, CI/CD automation.</p>
-      </div>
-      <div class="job">
+      </article>
+
+      <article class="job" tabindex="0" aria-label="Consultant at Dezired Solutions">
         <h3>Consultant – Dezired Solutions</h3>
-        <span>Sep 2018 – May 2022</span>
-        <p>Kafka streams, Data lake design, ML model deployment, DevOps CI/CD </p>
-      </div>
-      <div class="job">
+        <time>Sep 2018 – May 2022</time>
+        <p>Kafka streams, Data lake design, ML model deployment, DevOps CI/CD.</p>
+      </article>
+
+      <article class="job" tabindex="0" aria-label="Senior Software Engineer at ARRJ MS Pvt. Ltd.">
         <h3>Senior Software Engineer – ARRJ MS Pvt. Ltd.</h3>
-        <span>Aug 2010 – Jul 2016</span>
+        <time>Aug 2010 – Jul 2016</time>
         <p>ETL frameworks, REST APIs, real-time analytics pipelines.</p>
-      </div>
-      <div class="job">
+      </article>
+
+      <article class="job" tabindex="0" aria-label="Software Engineer at NextGen Compusoft">
         <h3>Software Engineer – NextGen Compusoft</h3>
-        <span>Aug 2008 – Jul 2010</span>
-        <p>SQL reporting, production support, backend optimisation.</p>
-      </div>
+        <time>Aug 2008 – Jul 2010</time>
+        <p>SQL reporting, production support, backend optimization.</p>
+      </article>
+
     </div>
   </section>
 
   <!-- ===== EDUCATION ===== -->
-  <section id="education" class="fade-in delay-6">
+  <section id="education" class="fade-in delay-6" tabindex="-1">
     <div class="container">
       <h2>Education</h2>
       <ul>
-        <li>Rajasthan Technical University – M.Tech, Computer Engineering (2016–2018)</li>
-        <li>University of Rajasthan – B.E., Computer Engineering (2004–2008)</li>
+        <li tabindex="0">Rajasthan Technical University – M.Tech, Computer Engineering (2016–2018)</li>
+        <li tabindex="0">University of Rajasthan – B.E., Computer Engineering (2004–2008)</li>
       </ul>
     </div>
   </section>
 
   <!-- ===== CONTACT ===== -->
-  <section id="contact" class="fade-in delay-7">
+  <section id="contact" class="fade-in delay-7" tabindex="-1">
     <div class="container">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:vgupta0129@gmail.com">vgupta0129@gmail.com</a></p>
-      <p>LinkedIn: <a href="www.linkedin.com/in/vgupta0129">linkedin.com/in/</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/">linkedin.com/in/</a></p>
+      <p>GitHub: <a href="https://github.com/vivekgupta2901">github.com/vivekgupta2901</a></p>
     </div>
   </section>
 
@@ -160,8 +186,7 @@
     <p>© 2025 Vivek Gupta | “Data is the new oil, but refinement is the key.”</p>
   </footer>
 
+  <!-- JavaScript -->
   <script src="main.js"></script>
 </body>
 </html>
-
-
