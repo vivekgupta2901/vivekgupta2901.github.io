@@ -2,6 +2,25 @@
 const themeToggle = document.getElementById('theme-toggle');
 const icon = themeToggle.querySelector('i');
 
+// Function to delete all cookies for the current domain
+function clearAllCookies() {
+  const cookies = document.cookie.split(";");
+
+  for (let cookie of cookies) {
+    const eqPos = cookie.indexOf("=");
+    const name = eqPos > -1 ? cookie.substr(0, eqPos).trim() : cookie.trim();
+    // Set the cookie expiration date to past to delete
+    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+  }
+}
+
+// Clear cookies on page load
+window.addEventListener('load', () => {
+  clearAllCookies();
+  // Optionally refresh the page once after clearing cookies if needed
+  // location.reload();
+});
+
 function setTheme(theme) {
   if (theme === 'dark') {
     document.body.classList.add('dark');
@@ -96,3 +115,4 @@ filterButtons.forEach(btn => {
     });
   });
 });
+
