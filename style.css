@@ -17,7 +17,7 @@ body {
   color: #333;
   line-height: 1.6;
   transition: background 0.3s, color 0.3s;
-  padding-top: 170px; /* space for hero+tabs fixed fallback */
+  padding-top: 170px; /* space for fixed hero + tabs */
 }
 
 /* Container for center & max width */
@@ -94,88 +94,78 @@ body.dark #theme-toggle {
   opacity: 0.85;
 }
 
-/* ===== HERO NAVIGATION TABS ===== */
+/* ===== HERO NAVIGATION (DESIGNER TABS) ===== */
 #hero-nav {
   margin-top: 25px;
-  border-bottom: 2px solid rgba(255,255,255,0.3);
+  text-align: center;
   user-select: none;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
+
 #hero-nav ul {
   display: inline-flex;
-  padding-left: 0;
-  margin-left: 0;
+  padding: 0;
+  margin: 0;
   list-style: none;
-  gap: 1rem;
+  gap: 1.5rem;
   white-space: nowrap;
   justify-content: center;
-  width: 100%;
-  overflow-x: auto;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
 }
-#hero-nav ul::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
-}
+
 #hero-nav ul li {
   margin: 0;
 }
+
+/* Tab style links - text with bottom underline */
 #hero-nav ul li a {
-  display: inline-block;
-  padding: 12px 20px;
-  color: rgba(255,255,255,0.85);
-  text-decoration: none;
+  position: relative;
+  padding: 8px 0;
+  color: rgba(255, 255, 255, 0.85);
   font-weight: 600;
   font-size: 1rem;
-  border: 2px solid transparent;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  transition:
-    color 0.3s ease,
-    border-color 0.3s ease,
-    background-color 0.3s ease;
+  text-decoration: none;
+  transition: color 0.3s ease;
   cursor: pointer;
-  background-color: transparent;
   user-select: none;
 }
-#hero-nav ul li a:hover,
-#hero-nav ul li a:focus {
-  color: #ffb74d;
-  border-color: #ffb74d #ffb74d transparent #ffb74d;
-  background-color: rgba(255, 183, 77, 0.15);
-  outline-offset: 2px;
+#hero-nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0%;
+  background: #ffb74d;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
+}
+#hero-nav ul li a:hover::after,
+#hero-nav ul li a:focus::after {
+  width: 100%;
 }
 #hero-nav ul li a.active {
   color: #ffb74d;
-  background-color: white;
-  border-color: white white transparent white;
-  border-bottom-color: white;
-  cursor: default;
-  user-select: text;
+}
+#hero-nav ul li a.active::after {
+  width: 100%;
 }
 
-/* Dark mode adjustments for hero/nav */
-body.dark #hero {
-  background: linear-gradient(135deg, #212c3b, #371975);
-}
+/* Dark mode adjustments */
 body.dark #hero-nav {
-  border-bottom: 2px solid rgba(122, 167, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 body.dark #hero-nav ul li a {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.75);
 }
 body.dark #hero-nav ul li a:hover,
 body.dark #hero-nav ul li a:focus {
   color: #ffe57f;
-  background-color: rgba(255, 229, 143, 0.2);
-  border-color: #ffe57f #ffe57f transparent #ffe57f;
 }
 body.dark #hero-nav ul li a.active {
-  background-color: #161b22;
   color: #ffe57f;
-  border-color: #ffe57f #ffe57f #161b22 #ffe57f;
-  border-bottom-color: #161b22;
+}
+body.dark #hero-nav ul li a::after {
+  background: #ffe57f;
 }
 
 /* ===== SECTIONS ===== */
